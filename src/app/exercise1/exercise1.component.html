@@ -1,0 +1,21 @@
+<form [formGroup]="textForm">
+    <div>
+        <h1 [ngStyle]="h1()">Hello {{ name | uppercase }}!</h1>
+        <label for="name" class="form-label">Name</label>
+        <input id="name" type="text" formControlName="name" [(ngModel)]="name" class="form-control">
+        <label for="font" class="form-label">Font</label>
+        <select formControlName="font" id="font" class="form-select">
+            <option *ngFor="let font of fonts; let i = index" [value]=font>{{ font }}</option>
+        </select>
+        <label for="size" class="form-label">Size</label>
+        <input id="size" type="number" formControlName="size" class="form-control">
+        <div id="radioGroup">
+            <label for='left' class="form-check-label">Align left</label>
+            <input type="radio" id="left" value="left" formControlName="align" class="form-check-input radio">
+            <label for='center' class="form-check-label">Align center</label>
+            <input type="radio" id='center' value='center' formControlName="align" class="form-check-input radio">
+            <label for='right' class="form-check-label">Align right</label>
+            <input type="radio" id='right' value="right" formControlName="align" class="form-check-input radio">
+        </div>
+    </div>
+</form>

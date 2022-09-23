@@ -1,0 +1,28 @@
+<form [formGroup]="calculatorForm" (ngSubmit)="onSubmit()">
+    <label for="operand1" class="form-label">Please insert operand 1</label>
+    <input type="number" id="operand1" formControlName="operand1" class="form-control">
+    <label for="operation" class="form-label">Please select operation</label>
+    <select id="operation" formControlName="operation" class="form-control">
+        <option *ngFor="let operation of operations" [value]=operation>{{ operation }}</option>
+    </select>
+    <label for="operand2" class="form-label">Please insert operand 2</label>
+    <input type="number" formControlName="operand2" class="form-control">
+    <button type="submit" class="btn btn-primary" id="submit">Submit</button>
+    <h4>Result: {{ result | number }}</h4>
+    <table class="table table-light">
+        <thead>
+            <th>Time of operation</th>
+            <th>Requested Operation</th>
+            <th>Result</th>
+            <th>Erase entry</th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let object of table; index as i">
+                <td>{{ object.time }}</td>
+                <td>{{ object.requestedOperation }}</td>
+                <td>{{ object.result }}</td>
+                <td><button (click)="deleteEntry(i)" class="btn btn-primary">Delete Entry</button></td>
+            </tr>
+        </tbody>
+    </table>
+</form>
