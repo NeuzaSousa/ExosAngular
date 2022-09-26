@@ -1,6 +1,7 @@
 <form [formGroup]="textForm">
     <div>
-        <h1 [ngStyle]="h1()">Hello {{ name | uppercase }}!</h1>
+        <h1>Exercise 1</h1>
+        <h2 [ngStyle]="h1()">Hello {{ name | uppercase }}!</h2>
         <label for="name" class="form-label">Name</label>
         <input id="name" type="text" formControlName="name" [(ngModel)]="name" class="form-control">
         <label for="font" class="form-label">Font</label>
@@ -11,7 +12,7 @@
         <input id="size" type="number" formControlName="size" class="form-control">
         <div id="radioGroup">
             <label for='left' class="form-check-label">Align left</label>
-            <input type="radio" id="left" value="left" formControlName="align" class="form-check-input radio">
+            <input type="radio" id="left" value="left" formControlName="align" class="form-check-input radio" checked>
             <label for='center' class="form-check-label">Align center</label>
             <input type="radio" id='center' value='center' formControlName="align" class="form-check-input radio">
             <label for='right' class="form-check-label">Align right</label>
@@ -19,3 +20,5 @@
         </div>
     </div>
 </form>
+
+<a routerLink="exercise2">Exercise 2</a>

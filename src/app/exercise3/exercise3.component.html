@@ -1,0 +1,20 @@
+<h1>Exercise 3</h1>
+
+<table class="table table-light table-striped">
+    <thead>
+        <th>Id</th>
+        <th>Amount</th>
+        <th>Balance</th>
+        <th>Label</th>
+        <th>Date</th>
+    </thead>
+    <tbody>
+        <tr *ngFor="let transaction of transactions | async">
+            <td><a [routerLink]="['/transaction', transaction.id]">{{ transaction.id }}</a></td>
+            <td><a [routerLink]="['/transaction', transaction.id]">{{ transaction.amount | currency }}</a></td>
+            <td><a [routerLink]="['/transaction', transaction.id]">{{ transaction.balance | currency }}</a></td>
+            <td><a [routerLink]="['/transaction', transaction.id]">{{ transaction.label }}</a></td>
+            <td><a [routerLink]="['/transaction', transaction.id]">{{ transaction.date | date }}</a></td>
+        </tr>
+    </tbody>
+</table>
